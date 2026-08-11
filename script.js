@@ -5,6 +5,7 @@
   const toTop = document.getElementById('toTop');
   const yearEl = document.getElementById('year');
   const form = document.getElementById('contactForm');
+  const careerForm = document.getElementById('careerForm');
   const themeToggle = document.getElementById('themeToggle');
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -85,6 +86,42 @@
         `Name: ${name}\n` +
         `Email: ${email}\n` +
         `Interested in: ${service}\n\n` +
+        `${message}`;
+
+      const mailto = `mailto:project.graceworks@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+
+      window.location.href = mailto;
+    });
+  }
+
+  // "Apply for this role" buttons -> pre-select the matching option in the application form
+  const roleSelect = document.getElementById('c-role');
+  if (roleSelect) {
+    document.querySelectorAll('[data-apply-role]').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        roleSelect.value = btn.getAttribute('data-apply-role');
+      });
+    });
+  }
+
+  // Career application form -> mailto (no backend on this static site)
+  if (careerForm) {
+    careerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = careerForm.name.value.trim();
+      const email = careerForm.email.value.trim();
+      const role = careerForm.role.value;
+      const link = careerForm.link.value.trim();
+      const message = careerForm.message.value.trim();
+
+      const subject = `Job application — ${role} — ${name}`;
+      const body =
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Applying for: ${role}\n` +
+        `Portfolio/resume link: ${link || '—'}\n\n` +
         `${message}`;
 
       const mailto = `mailto:project.graceworks@gmail.com?subject=${encodeURIComponent(
