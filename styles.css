@@ -222,14 +222,19 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 .nav-toggle{
   display:none;
   flex-direction:column;
+  align-items:center;
   justify-content:center;
-  gap:5px;
+  gap:4px;
   width:40px; height:40px;
-  border:none; background:transparent;
+  border-radius:50%;
+  border:1.5px solid var(--border-strong);
+  background:var(--surface);
   padding:0;
+  transition:border-color .25s ease, transform .2s ease;
 }
+.nav-toggle:hover{ border-color:var(--gold-500); transform:translateY(-2px); }
 .nav-toggle span{
-  height:2px; width:100%; background:var(--heading); border-radius:2px;
+  height:2px; width:16px; background:var(--heading); border-radius:2px;
   transition:transform .25s ease, opacity .25s ease, background .25s ease;
 }
 .nav-toggle.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
