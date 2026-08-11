@@ -200,6 +200,8 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .refer-badge{ animation:none; }
 }
 
+.refer-badge--nav{ display:none; }
+
 .theme-toggle{
   flex:none;
   width:40px; height:40px;
@@ -878,8 +880,14 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .nav-toggle{ display:flex; }
   .services-grid--featured{ grid-template-columns:1fr; }
   .process{ grid-template-columns:1fr; }
-  .refer-badge span{ display:none; }
-  .refer-badge{ padding:9px 11px; }
+  .nav a.refer-badge--nav{
+    display:flex;
+    justify-content:center;
+    width:100%;
+    padding:13px 16px;
+    border-bottom:none;
+    margin-bottom:6px;
+  }
 }
 
 @media (max-width: 520px){
@@ -888,7 +896,11 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .referral__icon{ width:88px; height:88px; }
   .contact__form{ padding:26px; }
   .header__actions{ gap:8px; }
-  .refer-badge{ padding:9px; }
+  .refer-badge span{ display:none; }
+  .header__actions > .refer-badge{ padding:9px; }
   .theme-toggle, .nav-toggle{ width:36px; height:36px; }
-  .brand__text{ font-size:1rem; }
+}
+
+@media (max-width: 400px){
+  .brand__text{ display:none; }
 }
