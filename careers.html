@@ -109,8 +109,8 @@
       <h1>Help us do this for <span class="highlight">more businesses</span>.</h1>
       <p class="hero__lede">We're growing across every service we offer — starting with virtual assistants and customer support. If your experience fits one of the areas below, we'd like to hear from you.</p>
       <div class="hero__ctas">
-        <a href="#apply" class="btn btn--primary">Apply Now</a>
-        <a href="#areas" class="btn btn--outline">See Open Areas</a>
+        <a href="#areas" class="btn btn--primary">See Open Roles</a>
+        <a href="mailto:project.graceworks@gmail.com" class="btn btn--outline">Email Us</a>
       </div>
     </div>
   </section>
@@ -138,7 +138,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Ongoing task handoff across multiple clients</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Keeping things organized and on track</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Virtual Assistant">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-va">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-va" data-role="Virtual Assistant" hidden>
+            <div class="field">
+              <label for="va-name">Name</label>
+              <input id="va-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="va-email">Email</label>
+              <input id="va-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="va-link">Portfolio / resume link</label>
+              <input id="va-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="va-message">Tell us about yourself</label>
+              <textarea id="va-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -153,7 +173,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Handle common questions and issues directly</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Flag anything that needs escalation</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Customer Support">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-cs">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-cs" data-role="Customer Support" hidden>
+            <div class="field">
+              <label for="cs-name">Name</label>
+              <input id="cs-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="cs-email">Email</label>
+              <input id="cs-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="cs-link">Portfolio / resume link</label>
+              <input id="cs-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="cs-message">Tell us about yourself</label>
+              <textarea id="cs-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -168,7 +208,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Build mobile‑responsive, cross‑device layouts</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Walk clients through their site once it's live</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Website &amp; App Development">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-wad">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-wad" data-role="Website &amp; App Development" hidden>
+            <div class="field">
+              <label for="wad-name">Name</label>
+              <input id="wad-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="wad-email">Email</label>
+              <input id="wad-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="wad-link">Portfolio / resume link</label>
+              <input id="wad-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="wad-message">Tell us about yourself</label>
+              <textarea id="wad-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -183,7 +243,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Product upload and store configuration</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Conversion‑focused layout and checkout work</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Shopify Development">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-sd">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-sd" data-role="Shopify Development" hidden>
+            <div class="field">
+              <label for="sd-name">Name</label>
+              <input id="sd-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="sd-email">Email</label>
+              <input id="sd-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="sd-link">Portfolio / resume link</label>
+              <input id="sd-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="sd-message">Tell us about yourself</label>
+              <textarea id="sd-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -198,7 +278,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Track performance and report on what's working</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Adjust strategy based on real results</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Digital Marketing">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-dm">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-dm" data-role="Digital Marketing" hidden>
+            <div class="field">
+              <label for="dm-name">Name</label>
+              <input id="dm-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="dm-email">Email</label>
+              <input id="dm-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="dm-link">Portfolio / resume link</label>
+              <input id="dm-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="dm-message">Tell us about yourself</label>
+              <textarea id="dm-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -213,7 +313,27 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Provide practical, actionable recommendations</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Check in regularly as things evolve</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Business Consultation">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-bc">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-bc" data-role="Business Consultation" hidden>
+            <div class="field">
+              <label for="bc-name">Name</label>
+              <input id="bc-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="bc-email">Email</label>
+              <input id="bc-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="bc-link">Portfolio / resume link</label>
+              <input id="bc-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="bc-message">Tell us about yourself</label>
+              <textarea id="bc-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
         <article class="vacancy-card reveal">
@@ -228,62 +348,42 @@
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Be an accountable long‑term partner</li>
             <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>Support clients after launch, not just before</li>
           </ul>
-          <a href="#apply" class="btn btn--outline" data-apply-role="Growth Support">Apply for this role</a>
+          <button type="button" class="btn btn--outline vacancy-card__toggle" aria-expanded="false" aria-controls="form-gs">Apply for this role</button>
+          <form class="vacancy-card__form" id="form-gs" data-role="Growth Support" hidden>
+            <div class="field">
+              <label for="gs-name">Name</label>
+              <input id="gs-name" name="name" type="text" required placeholder="Your full name">
+            </div>
+            <div class="field">
+              <label for="gs-email">Email</label>
+              <input id="gs-email" name="email" type="email" required placeholder="you@example.com">
+            </div>
+            <div class="field">
+              <label for="gs-link">Portfolio / resume link</label>
+              <input id="gs-link" name="link" type="text" placeholder="Optional">
+            </div>
+            <div class="field">
+              <label for="gs-message">Tell us about yourself</label>
+              <textarea id="gs-message" name="message" rows="3" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Application</button>
+            <p class="form-note">Opens your email app with the message pre‑filled.</p>
+          </form>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- APPLY -->
+  <!-- GENERAL CONTACT -->
   <section id="apply" class="section section--tint">
-    <div class="wrap contact">
-      <div class="contact__intro reveal">
-        <span class="kicker"><i></i>Apply<i></i></span>
-        <h2>Tell us about yourself</h2>
-        <p>Send us a few details and we'll be in touch. No formal cover letter needed — just enough for us to know where you'd fit.</p>
-
-        <div class="contact__links">
-          <a href="mailto:project.graceworks@gmail.com" class="contact__link">
-            <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
-            project.graceworks@gmail.com
-          </a>
-        </div>
+    <div class="wrap section__head reveal">
+      <span class="kicker"><i></i>Not Sure Where You Fit<i></i></span>
+      <h2>Reach out directly</h2>
+      <p>Don't see the exact role above? Send us a message anyway — we're always open to hearing from people who'd be a good fit.</p>
+      <div class="about-cta">
+        <a href="mailto:project.graceworks@gmail.com" class="btn btn--primary">Email Us</a>
       </div>
-
-      <form class="contact__form reveal" id="careerForm">
-        <div class="field">
-          <label for="c-name">Name</label>
-          <input id="c-name" name="name" type="text" required placeholder="Your full name">
-        </div>
-        <div class="field">
-          <label for="c-email">Email</label>
-          <input id="c-email" name="email" type="email" required placeholder="you@example.com">
-        </div>
-        <div class="field">
-          <label for="c-role">Applying for</label>
-          <select id="c-role" name="role">
-            <option>Virtual Assistant</option>
-            <option>Customer Support</option>
-            <option>Website &amp; App Development</option>
-            <option>Shopify Development</option>
-            <option>Digital Marketing</option>
-            <option>Business Consultation</option>
-            <option>Growth Support</option>
-            <option>Not sure yet</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="c-link">Portfolio / resume link</label>
-          <input id="c-link" name="link" type="text" placeholder="LinkedIn, portfolio, resume link — optional">
-        </div>
-        <div class="field">
-          <label for="c-message">Tell us about yourself</label>
-          <textarea id="c-message" name="message" rows="4" required placeholder="Relevant experience, availability, anything else worth knowing"></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--full">Send Application</button>
-        <p class="form-note">Opens your email app with the message pre‑filled — nothing is sent from this page directly.</p>
-      </form>
     </div>
   </section>
 

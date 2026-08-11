@@ -366,7 +366,16 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   padding:2px;
   stroke-width:3;
 }
-.vacancy-card .btn{ margin-top:auto; align-self:flex-start; }
+.vacancy-card > .btn{ margin-top:auto; align-self:flex-start; }
+
+.vacancy-card__form{
+  display:grid;
+  gap:14px;
+  margin-top:18px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+}
+.vacancy-card__form[hidden]{ display:none; }
 
 .hero__inner{
   position:relative; z-index:1;

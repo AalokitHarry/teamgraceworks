@@ -5,7 +5,6 @@
   const toTop = document.getElementById('toTop');
   const yearEl = document.getElementById('year');
   const form = document.getElementById('contactForm');
-  const careerForm = document.getElementById('careerForm');
   const themeToggle = document.getElementById('themeToggle');
 
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -96,25 +95,31 @@
     });
   }
 
-  // "Apply for this role" buttons -> pre-select the matching option in the application form
-  const roleSelect = document.getElementById('c-role');
-  if (roleSelect) {
-    document.querySelectorAll('[data-apply-role]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        roleSelect.value = btn.getAttribute('data-apply-role');
-      });
-    });
-  }
+  // Per-role vacancy application forms (Careers page)
+  document.querySelectorAll('.vacancy-card__toggle').forEach((btn) => {
+    const targetForm = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!targetForm) return;
 
-  // Career application form -> mailto (no backend on this static site)
-  if (careerForm) {
-    careerForm.addEventListener('submit', (e) => {
+    btn.addEventListener('click', () => {
+      const wasHidden = targetForm.hasAttribute('hidden');
+      targetForm.toggleAttribute('hidden', !wasHidden);
+      btn.setAttribute('aria-expanded', String(wasHidden));
+      btn.textContent = wasHidden ? 'Hide application form' : 'Apply for this role';
+      if (wasHidden) {
+        const firstField = targetForm.querySelector('input, textarea');
+        if (firstField) firstField.focus();
+      }
+    });
+  });
+
+  document.querySelectorAll('.vacancy-card__form').forEach((vacForm) => {
+    vacForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = careerForm.name.value.trim();
-      const email = careerForm.email.value.trim();
-      const role = careerForm.role.value;
-      const link = careerForm.link.value.trim();
-      const message = careerForm.message.value.trim();
+      const role = vacForm.getAttribute('data-role');
+      const name = vacForm.name.value.trim();
+      const email = vacForm.email.value.trim();
+      const link = vacForm.link.value.trim();
+      const message = vacForm.message.value.trim();
 
       const subject = `Job application — ${role} — ${name}`;
       const body =
@@ -130,5 +135,5 @@
 
       window.location.href = mailto;
     });
-  }
+  });
 })();
