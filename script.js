@@ -118,6 +118,8 @@
       const role = vacForm.getAttribute('data-role');
       const name = vacForm.name.value.trim();
       const email = vacForm.email.value.trim();
+      const phone = vacForm.phone.value.trim();
+      const availability = vacForm.availability.value;
       const link = vacForm.link.value.trim();
       const message = vacForm.message.value.trim();
 
@@ -125,8 +127,10 @@
       const body =
         `Name: ${name}\n` +
         `Email: ${email}\n` +
+        `Phone: ${phone}\n` +
+        `Availability: ${availability}\n` +
         `Applying for: ${role}\n` +
-        `Portfolio/resume link: ${link || '—'}\n\n` +
+        `Portfolio/resume link: ${link}\n\n` +
         `${message}`;
 
       const mailto = `mailto:project.graceworks@gmail.com?subject=${encodeURIComponent(
