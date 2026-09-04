@@ -751,6 +751,30 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 .referral__copy h2{ color:var(--white); font-size:clamp(1.6rem, 3vw, 2.1rem); font-weight:600; margin-bottom:14px; }
 .referral__copy p{ color:rgba(255,255,255,.72); max-width:56ch; margin-bottom:26px; font-size:1rem; }
 
+/* ---------- Our Promise ---------- */
+.promise-card{
+  display:flex;
+  align-items:center;
+  gap:40px;
+  background:var(--surface);
+  border:1.5px solid rgba(201,152,43,.35);
+  border-radius:var(--radius-lg);
+  padding:48px 44px;
+  box-shadow:var(--shadow-lift);
+}
+.promise-card__icon{
+  flex:none;
+  width:100px; height:100px;
+  border-radius:50%;
+  background:var(--navy-900);
+  border:1px solid rgba(255,255,255,.08);
+  display:flex; align-items:center; justify-content:center;
+  color:var(--gold-400);
+}
+.promise-card__icon svg{ width:44px; height:44px; }
+.promise-card__copy h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); font-weight:600; margin-bottom:14px; }
+.promise-card__copy p{ max-width:60ch; font-size:1.02rem; }
+
 /* ---------- Contact ---------- */
 .contact{
   display:grid;
@@ -862,6 +886,8 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .contact{ grid-template-columns:1fr; }
   .referral{ flex-direction:column; text-align:center; }
   .referral__copy p{ margin-left:auto; margin-right:auto; }
+  .promise-card{ flex-direction:column; text-align:center; padding:36px 28px; }
+  .promise-card__copy p{ margin-left:auto; margin-right:auto; }
   .service-detail{ grid-template-columns:1fr; text-align:center; justify-items:center; }
   .service-detail__list{ text-align:left; max-width:420px; }
 }
