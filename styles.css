@@ -693,6 +693,52 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 .pillar h3{ font-size:1.2rem; font-weight:600; margin-bottom:10px; }
 .pillar p{ font-size:.94rem; }
 
+/* ---------- Client review ---------- */
+.review{
+  position:relative;
+  max-width:820px;
+  margin:0 auto;
+  background:var(--surface);
+  border-radius:var(--radius-lg);
+  padding:44px 52px 40px;
+  box-shadow:var(--shadow-soft);
+  border-top:3px solid var(--gold-500);
+}
+.review__mark{
+  display:block;
+  height:40px;
+  margin-bottom:10px;
+  font-family:var(--font-display);
+  font-size:6rem;
+  line-height:.8;
+  color:var(--gold-500);
+}
+.review__quote{ margin:0; }
+.review__quote p{
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  line-height:1.55;
+  color:var(--heading);
+}
+.review__by{
+  display:flex; align-items:center; gap:18px;
+  margin-top:28px;
+}
+.review__rule{
+  flex:none;
+  width:48px; height:3px;
+  background:var(--gold-500);
+  border-radius:2px;
+}
+.review__who strong{ display:block; font-weight:800; color:var(--heading); }
+.review__who a{
+  font-size:.92rem;
+  color:var(--text-soft);
+  text-decoration:none;
+  transition:color .2s ease;
+}
+.review__who a:hover{ color:var(--gold-600); text-decoration:underline; }
+
 /* ---------- Process ---------- */
 .process{
   position:relative;
@@ -880,6 +926,8 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .nav a{ width:100%; padding:14px 0; border-bottom:1px solid var(--border); }
   .nav-toggle{ display:flex; }
   .process{ grid-template-columns:1fr; }
+  .review{ padding:34px 26px 30px; }
+  .review__quote p{ font-size:1.15rem; }
   .nav a.refer-badge--nav{
     display:flex;
     justify-content:center;
