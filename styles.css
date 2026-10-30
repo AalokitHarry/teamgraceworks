@@ -709,6 +709,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   box-shadow:var(--shadow-soft);
   border-top:3px solid var(--gold-500);
 }
+.review + .review{ margin-top:28px; }
 .review__mark{
   display:block;
   height:40px;
