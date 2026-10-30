@@ -18,6 +18,8 @@
   --radius-md:16px;
   --radius-sm:10px;
 
+  --gutter:clamp(24px, 5vw, 120px);
+
   /* theme tokens — light (default) */
   --bg:#faf7f0;
   --bg-tint:#f1ece1;
@@ -60,11 +62,7 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{
-  scroll-behavior:smooth;
-  /* type grows gently past 1440px so text keeps pace with the full-width layout */
-  font-size:clamp(100%, 62.5% + .4167vw, 125%);
-}
+html{ scroll-behavior:smooth; }
 body{
   margin:0;
   font-family:var(--font-body);
@@ -84,7 +82,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 
 .wrap{
   margin:0 auto;
-  padding:0 clamp(24px, 4vw, 96px);
+  padding:0 var(--gutter);
 }
 
 /* ---------- Reveal animation ---------- */
@@ -311,7 +309,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 .about-hero{ padding:64px 0 84px; }
 .about-hero__inner{
   position:relative; z-index:1;
-  max-width:47.5rem;
+  max-width:760px;
   margin:0 auto;
   padding:0 24px;
   text-align:center;
@@ -550,7 +548,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 }
 
 .section__head{
-  max-width:40rem;
+  max-width:640px;
   margin:0 auto 56px;
   text-align:center;
 }
@@ -569,7 +567,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 .section__head p{ font-size:1.02rem; }
 
 .section__subhead{
-  max-width:40rem;
+  max-width:640px;
   margin:64px auto 40px;
   text-align:center;
 }
@@ -822,7 +820,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
 }
 .contact__intro .kicker{ margin-bottom:16px; }
 .contact__intro h2{ font-size:clamp(1.6rem, 3vw, 2.1rem); font-weight:600; margin-bottom:14px; }
-.contact__intro p{ max-width:56ch; margin-bottom:28px; }
+.contact__intro p{ margin-bottom:28px; }
 
 .contact__links{ display:flex; flex-direction:column; gap:14px; }
 .contact__link{
@@ -974,24 +972,19 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .brand__text{ display:none; }
 }
 
-/* ---------- Wide screens: layouts fill the full width ---------- */
+/* ---------- Wide screens: more columns, never wider elements ---------- */
 @media (min-width: 981px){
-  .hero__visual{ width:100%; max-width:40rem; justify-self:center; }
+  .hero__visual{ width:100%; max-width:36rem; justify-self:end; }
   .referral{ justify-content:center; }
 }
 
 @media (min-width: 1100px){
-  .services-grid{ display:grid; grid-template-columns:repeat(6, minmax(0, 1fr)); }
-  .service-card{ grid-column:span 2; max-width:none; }
-  .services-grid:not(.services-grid--featured) .service-card:nth-child(4){ grid-column:2 / span 2; }
-
-  .vacancy-grid{ grid-template-columns:repeat(2, minmax(0, 1fr)); max-width:none; }
+  .vacancy-grid{ display:flex; flex-wrap:wrap; justify-content:center; max-width:none; }
+  .vacancy-card{ flex:0 1 calc((100% - 24px) / 2); }
   /* an open application form shouldn't stretch the cards beside it */
-  .vacancy-grid:has(.vacancy-card__form:not([hidden])){ align-items:start; }
-  .vacancy-card:last-child:nth-child(odd){ grid-column:1 / -1; justify-self:center; width:calc(50% - 12px); }
+  .vacancy-grid:has(.vacancy-card__form:not([hidden])){ align-items:flex-start; }
 
-  .service-detail{ max-width:none; }
-  .service-detail__body > p{ max-width:60ch; }
+  .service-detail{ grid-template-columns:96px minmax(0, 66rem); justify-content:center; max-width:none; }
   .service-detail__body{
     display:grid;
     grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -1004,14 +997,53 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   .service-detail__body > .service-detail__list{ grid-column:2; grid-row:1 / span 3; }
 }
 
-@media (min-width: 1500px){
-  .services-grid:not(.services-grid--featured){ grid-template-columns:repeat(5, minmax(0, 1fr)); }
-  .services-grid:not(.services-grid--featured) .service-card,
-  .services-grid:not(.services-grid--featured) .service-card:nth-child(4){ grid-column:auto; }
+@media (min-width: 1200px){
+  .contact{ grid-template-columns:repeat(2, minmax(0, 1fr)); column-gap:96px; }
+  .contact__intro{ max-width:36rem; }
+  .contact__form{ width:100%; max-width:44rem; justify-self:end; grid-template-columns:repeat(2, minmax(0, 1fr)); }
+  .contact__form > *{ grid-column:1 / -1; }
+  .contact__form > .field:nth-child(-n+2){ grid-column:auto; }
+}
 
-  .vacancy-grid{ grid-template-columns:repeat(3, minmax(0, 1fr)); }
-  .vacancy-card:last-child:nth-child(odd){ grid-column:auto; justify-self:stretch; width:auto; }
-  .vacancy-card:last-child:nth-child(3n+1){ grid-column:2; }
+@media (min-width: 1280px){
+  .vacancy-card{ flex-basis:calc((100% - 48px) / 3); }
+}
+
+/* Headings move to a left rail so cards keep their size beside them */
+@media (min-width: 1600px){
+  .hero__inner{ grid-template-columns:repeat(2, minmax(0, 1fr)); gap:96px; }
+  .hero h1{ font-size:clamp(3.4rem, 3.5vw, 4.4rem); }
+  .hero__lede{ font-size:1.18rem; }
+  .hero__visual{ max-width:44rem; }
+  .growth-card__chart{ height:auto; aspect-ratio:320 / 110; }
+
+  .section > .wrap:has(> .section__head + *):not(:has(.service-detail)){
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(0, 3fr);
+    column-gap:clamp(64px, 5vw, 120px);
+    row-gap:96px;
+    align-items:start;
+  }
+  .wrap > :is(.section__head, .section__subhead):has(~ :is(.services-grid, .pillars, .process, .reviews, .vacancy-grid)){
+    grid-column:1;
+    position:sticky;
+    top:112px;
+    max-width:none;
+    margin:0;
+    text-align:left;
+  }
+  .wrap > :is(.section__head, .section__subhead):has(~ :is(.services-grid, .pillars, .process, .reviews, .vacancy-grid)) .kicker i:first-child{ display:none; }
+  .contact__intro .kicker i:first-child{ display:none; }
+  .wrap > :is(.services-grid, .pillars, .process, .reviews, .vacancy-grid){ grid-column:2; }
+
+  .wrap > .services-grid{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); }
+  .wrap > .services-grid .service-card{ max-width:none; }
+  .wrap > .vacancy-grid{ display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 2200px){
+  html{ font-size:112.5%; }
+  .section > .wrap:has(> .section__head + *):not(:has(.service-detail)){ grid-template-columns:minmax(0, 1fr) minmax(0, 2.4fr); }
 }
 
 /* Tablet: fit the full nav beside the logo */
