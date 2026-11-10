@@ -96,32 +96,6 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   transform:translateY(0);
 }
 
-/* ---------- Top marquee bar ---------- */
-.topbar{
-  background:var(--navy-950);
-  color:var(--gold-100);
-  font-size:.78rem;
-  font-weight:600;
-  letter-spacing:.02em;
-  overflow:hidden;
-  white-space:nowrap;
-  padding:7px 0;
-}
-.topbar__track{
-  display:inline-flex;
-  gap:14px;
-  align-items:center;
-  animation:marquee 26s linear infinite;
-  padding-left:100%;
-}
-.topbar__dot{ color:var(--gold-500); }
-@keyframes marquee{
-  to{ transform:translateX(-100%); }
-}
-@media (prefers-reduced-motion: reduce){
-  .topbar__track{ animation:none; padding-left:0; }
-}
-
 /* ---------- Header ---------- */
 .site-header{
   position:sticky;
@@ -1099,7 +1073,6 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   background:linear-gradient(90deg, #0b1f3a, #143560 50%, #0b1f3a);
   border-block:1px solid rgba(220,174,74,.2);
 }
-:root[data-theme="dark"] .topbar{ background:linear-gradient(90deg, #050d1b, #0b1f3a, #050d1b); }
 :root[data-theme="dark"] .footer{
   background:linear-gradient(180deg, #071427 0%, #050d1b 100%);
   border-top:1px solid rgba(220,174,74,.2);
