@@ -730,6 +730,7 @@ svg{ fill:none; stroke:currentColor; stroke-width:2; stroke-linecap:round; strok
   transition:color .2s ease;
 }
 .review__who a:hover{ color:var(--gold-600); text-decoration:underline; }
+.review__role{ font-size:.92rem; color:var(--text-soft); }
 
 /* ---------- Process ---------- */
 .process{
