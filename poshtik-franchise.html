@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<title>Franchisee Enquiry — The Poshtik Kitchen</title>
+<meta name="description" content="Interested in a Poshtik Kitchen franchise? Share your name, contact number and location, and the team will call you back.">
+<meta name="theme-color" content="#0a0a08">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Franchisee Enquiry — The Poshtik Kitchen">
+<meta property="og:description" content="Bring Poshtik Kitchen to your city. Share your details and the team will call you back.">
+<meta property="og:url" content="https://teamgraceworks.com/poshtik-franchise.html">
+<meta property="og:image" content="https://teamgraceworks.com/assets/poshtik/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/poshtik/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/poshtik/icon-192.png">
+<link rel="apple-touch-icon" href="assets/poshtik/icon-192.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="poshtik.css?v=20261117">
+<script src="poshtik.js?v=20261117" defer></script>
+</head>
+<body>
+
+<main class="pk">
+  <section class="pk__intro">
+    <picture>
+      <source srcset="assets/poshtik/logo-480.webp" type="image/webp">
+      <img class="pk__logo" src="assets/poshtik/logo-480.png" width="480" height="480" alt="Poshtik Kitchen — Taste, Nourish, Rejuvenate">
+    </picture>
+
+    <h1 class="pk__title">Bring <span>Poshtik Kitchen</span> to your city</h1>
+    <p class="pk__lede">Interested in running a Poshtik Kitchen franchise? Leave your name, number and location, and our team will call you to talk it through.</p>
+  </section>
+
+  <section class="pk__panel" aria-labelledby="formTitle">
+    <form class="pk__form" id="enquiryForm" novalidate
+          data-endpoint="https://script.google.com/macros/s/AKfycbx6ycnxuw4jg7knb2OthcCzR5kk3jRSdYPsUnQKLcTFJ9gq31VLHVwg5J6SXKtAzQM/exec">
+      <h2 class="pk__form-title" id="formTitle">Franchisee enquiry</h2>
+
+      <div class="pk__field">
+        <label for="fName">Name</label>
+        <input id="fName" name="name" type="text" autocomplete="name" maxlength="80" required aria-describedby="fNameError">
+        <p class="pk__error" id="fNameError"></p>
+      </div>
+
+      <div class="pk__field">
+        <label for="fPhone">Contact number</label>
+        <input id="fPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="e.g. 98765 43210" required aria-describedby="fPhoneError">
+        <p class="pk__error" id="fPhoneError"></p>
+      </div>
+
+      <div class="pk__field">
+        <label for="fLocation">Location</label>
+        <input id="fLocation" name="location" type="text" autocomplete="address-level2" maxlength="120" placeholder="City and state" required aria-describedby="fLocationError">
+        <p class="pk__error" id="fLocationError"></p>
+      </div>
+
+      <div class="pk__trap" aria-hidden="true">
+        <label for="fWebsite">Leave this empty</label>
+        <input id="fWebsite" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+
+      <button class="pk__submit" type="submit">Send enquiry</button>
+      <p class="pk__status" id="formStatus" role="status" aria-live="polite"></p>
+      <p class="pk__note">We only use these details to contact you about a franchise.</p>
+    </form>
+
+    <div class="pk__thanks" id="thanks" tabindex="-1" hidden>
+      <h2 class="pk__thanks-title">Thank you<span id="thanksName"></span>.</h2>
+      <p>Our team will call you on <strong id="thanksPhone"></strong> to talk about a Poshtik Kitchen franchise in <strong id="thanksLocation"></strong>.</p>
+    </div>
+  </section>
+
+  <p class="pk__tagline" aria-hidden="true">Taste <i></i> Nourish <i></i> Rejuvenate</p>
+</main>
+
+</body>
+</html>
