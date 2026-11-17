@@ -18,8 +18,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="poshtik-admin.css?v=20261117">
-<script src="poshtik-admin.js?v=20261117" defer></script>
+<link rel="stylesheet" href="poshtik-admin.css?v=20261117b">
+<script src="poshtik-admin.js?v=20261117b" defer></script>
 </head>
 <body data-endpoint="https://script.google.com/macros/s/AKfycbx6ycnxuw4jg7knb2OthcCzR5kk3jRSdYPsUnQKLcTFJ9gq31VLHVwg5J6SXKtAzQM/exec">
 
@@ -38,49 +38,33 @@
 </section>
 
 <main class="desk" id="desk" hidden>
-  <header class="bar">
+  <header class="top">
     <div class="brand">
-      <img src="assets/poshtik/logo-480.webp" width="52" height="52" alt="">
+      <img src="assets/poshtik/logo-480.webp" width="44" height="44" alt="">
       <div>
         <h1>Franchise Enquiry Desk</h1>
         <p>The Poshtik Kitchen</p>
       </div>
     </div>
-    <div class="actions">
+    <nav class="tools" aria-label="Desk">
       <span class="updated" id="updated"></span>
-      <button class="btn btn--ghost" id="refreshBtn" type="button">Refresh</button>
-      <button class="btn btn--ghost" id="lockBtn" type="button">Lock</button>
-    </div>
+      <button class="text-btn" id="refreshBtn" type="button">Refresh</button>
+      <button class="text-btn" id="lockBtn" type="button">Lock</button>
+    </nav>
   </header>
 
-  <section class="stats" aria-label="Summary">
-    <div class="card"><p class="stat__label">Total enquiries</p><p class="stat__value" id="sTotal">0</p></div>
-    <div class="card"><p class="stat__label">Last 7 days</p><p class="stat__value" id="sWeek">0</p></div>
-    <div class="card"><p class="stat__label">Today</p><p class="stat__value" id="sToday">0</p></div>
-    <div class="card"><p class="stat__label">Top location</p><p class="stat__value stat__value--text" id="sTop">—</p><p class="stat__note" id="sTopNote"></p></div>
+  <section class="summary" aria-label="Summary">
+    <p><span class="figure" id="sTotal">0</span><span class="label">enquiries</span></p>
+    <p><span class="figure" id="sWeek">0</span><span class="label">this week</span></p>
+    <p><span class="figure" id="sToday">0</span><span class="label">today</span></p>
   </section>
 
-  <section class="charts">
-    <div class="card trend">
-      <h2>Enquiries per day, last 30 days</h2>
-      <div id="trend"></div>
-      <div class="axis"><span id="axisStart"></span><span>Today</span></div>
-    </div>
-    <div class="card">
-      <h2>Where enquiries come from</h2>
-      <ol class="places" id="places"></ol>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="list__head">
-      <h2>All enquiries <span class="count" id="count"></span></h2>
+  <section class="enquiries" aria-labelledby="listTitle">
+    <div class="enquiries__head">
+      <h2 id="listTitle">Enquiries <span class="count" id="count"></span></h2>
       <input class="input search" id="q" type="search" placeholder="Search name, number or location" aria-label="Search enquiries">
     </div>
-    <table>
-      <thead><tr><th>Received</th><th>Name</th><th>Contact number</th><th>Location</th><th><span class="sr">Actions</span></th></tr></thead>
-      <tbody id="rows"></tbody>
-    </table>
+    <ul class="list" id="rows"></ul>
     <p class="none" id="empty" hidden>No enquiries yet.</p>
   </section>
 </main>
