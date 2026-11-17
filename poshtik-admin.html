@@ -9,7 +9,7 @@
 <meta name="robots" content="noindex, nofollow">
 
 <title>Franchise Enquiry Desk — The Poshtik Kitchen</title>
-<meta name="theme-color" content="#0a0a08">
+<meta name="theme-color" content="#0c0c0d">
 
 <link rel="icon" type="image/png" sizes="32x32" href="assets/poshtik/icon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="assets/poshtik/icon-192.png">
@@ -17,57 +17,67 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="poshtik-admin.css?v=20261117b">
-<script src="poshtik-admin.js?v=20261117b" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="poshtik-admin.css?v=20261117c">
+<script src="poshtik-admin.js?v=20261117c" defer></script>
 </head>
 <body data-endpoint="https://script.google.com/macros/s/AKfycbx6ycnxuw4jg7knb2OthcCzR5kk3jRSdYPsUnQKLcTFJ9gq31VLHVwg5J6SXKtAzQM/exec">
 
 <section class="lock" id="lock">
   <div class="lock__card">
-    <img class="lock__logo" src="assets/poshtik/logo-480.webp" width="112" height="112" alt="Poshtik Kitchen">
+    <img class="lock__logo" src="assets/poshtik/logo-480.webp" width="64" height="64" alt="Poshtik Kitchen">
     <h1>Franchise Enquiry Desk</h1>
-    <p class="lock__sub">The Poshtik Kitchen · Admin</p>
+    <p class="lock__sub">Sign in to see franchise enquiries for The Poshtik Kitchen.</p>
     <form id="lockForm">
       <label for="pw">Password</label>
       <input class="input" id="pw" type="password" autocomplete="current-password" required>
-      <button class="btn btn--full" id="openBtn" type="submit">Open desk</button>
+      <button class="btn btn--primary btn--full" id="openBtn" type="submit">Sign in</button>
       <p class="msg" id="lockMsg" role="alert"></p>
     </form>
   </div>
 </section>
 
-<main class="desk" id="desk" hidden>
-  <header class="top">
-    <div class="brand">
-      <img src="assets/poshtik/logo-480.webp" width="44" height="44" alt="">
-      <div>
-        <h1>Franchise Enquiry Desk</h1>
-        <p>The Poshtik Kitchen</p>
+<div class="app" id="desk" hidden>
+  <header class="topbar">
+    <div class="topbar__in">
+      <div class="brand">
+        <img src="assets/poshtik/logo-480.webp" width="34" height="34" alt="">
+        <div>
+          <h1>Franchise Enquiry Desk</h1>
+          <p>The Poshtik Kitchen</p>
+        </div>
+      </div>
+      <div class="tools">
+        <span class="updated" id="updated"></span>
+        <button class="btn btn--quiet" id="refreshBtn" type="button" aria-label="Refresh"><span class="ico" data-icon="refresh"></span><span class="btn__text">Refresh</span></button>
+        <button class="btn btn--quiet" id="lockBtn" type="button" aria-label="Lock"><span class="ico" data-icon="lock"></span><span class="btn__text">Lock</span></button>
       </div>
     </div>
-    <nav class="tools" aria-label="Desk">
-      <span class="updated" id="updated"></span>
-      <button class="text-btn" id="refreshBtn" type="button">Refresh</button>
-      <button class="text-btn" id="lockBtn" type="button">Lock</button>
-    </nav>
   </header>
 
-  <section class="summary" aria-label="Summary">
-    <p><span class="figure" id="sTotal">0</span><span class="label">enquiries</span></p>
-    <p><span class="figure" id="sWeek">0</span><span class="label">this week</span></p>
-    <p><span class="figure" id="sToday">0</span><span class="label">today</span></p>
-  </section>
+  <main class="main">
+    <section class="stats" aria-label="Summary">
+      <div class="stat"><p class="stat__label">Total</p><p class="stat__value" id="sTotal">0</p></div>
+      <div class="stat"><p class="stat__label">This week</p><p class="stat__value" id="sWeek">0</p></div>
+      <div class="stat stat--accent"><p class="stat__label">Today</p><p class="stat__value" id="sToday">0</p></div>
+    </section>
 
-  <section class="enquiries" aria-labelledby="listTitle">
-    <div class="enquiries__head">
-      <h2 id="listTitle">Enquiries <span class="count" id="count"></span></h2>
-      <input class="input search" id="q" type="search" placeholder="Search name, number or location" aria-label="Search enquiries">
-    </div>
-    <ul class="list" id="rows"></ul>
-    <p class="none" id="empty" hidden>No enquiries yet.</p>
-  </section>
-</main>
+    <section aria-labelledby="listTitle">
+      <div class="listbar">
+        <h2 id="listTitle">Enquiries <span class="pill" id="count">0</span></h2>
+        <label class="search">
+          <span class="ico" data-icon="search"></span>
+          <input id="q" type="search" placeholder="Search name, number or city" aria-label="Search enquiries">
+        </label>
+      </div>
+      <ul class="cards" id="rows"></ul>
+      <div class="empty" id="empty" hidden>
+        <span class="ico ico--lg" data-icon="inbox"></span>
+        <p id="emptyText">No enquiries yet.</p>
+      </div>
+    </section>
+  </main>
+</div>
 
 </body>
 </html>
